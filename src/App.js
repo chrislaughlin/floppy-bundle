@@ -7,7 +7,7 @@ const App = () => {
     return (
         <div className="app">
             <h1>
-                Floppy Bundle
+                <span className="h1-first-letter">F</span>loppy <span className="h1-first-letter">B</span>undle
             </h1>
             <h2>
                 How many floppy disks would it take to hold your JavaScript bundle

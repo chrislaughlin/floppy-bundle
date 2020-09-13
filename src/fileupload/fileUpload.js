@@ -32,7 +32,16 @@ const FileUpload = () => {
 
 
     return (
-        <div>
+        <div className="file-upload">
+            <span>
+                Upload a
+                <a
+                    href="https://webpack.js.org/api/stats/#asset-objects"
+                    target="_blank"
+                >
+                    webpack stats.json file
+                </a>. You can generate this by using the "--json > compilation-stats.json" CLI options
+            </span>
             <Dropzone
                 accept="application/json"
                 onDrop={onDrop}
@@ -41,7 +50,10 @@ const FileUpload = () => {
                 {({getRootProps, getInputProps}) => (
                     <div {...getRootProps()}>
                         <input {...getInputProps()} />
-                        <p>Drag 'n' drop some files here, or click to select files</p>
+
+                        <button>
+                            Upload File
+                        </button>
                     </div>
                 )}
             </Dropzone>

@@ -11,6 +11,7 @@ body {
     align-items: center;
     font-size: 8px;
     min-width: 320px;
+    color: #a9efff;
 }
 
 @media screen and (min-width: 320px) {
@@ -37,6 +38,10 @@ h1 {
     margin-bottom: 0px;
 }
 
+.h1-first-letter {
+    color: #DC412F;
+}
+
 h2 {
     color: #a9efff;
     font-style: italic;
@@ -49,4 +54,31 @@ h2 {
     display: flex;
     flex-direction: column;
     text-align: center;
+}
+
+.file-upload {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    align-items: center;
+}
+
+.file-upload span {
+    font-size: 1.5em;
+}
+
+a {
+    color: #a9efff;
+}
+
+button {
+    width: 20em;
+    height: 5em;
+    border-radius: 15px;
+    border: none;
+    background: #2A879D;
+    color: #F1E8C4;
+    font-size: 1em;
+    margin-top: 20px;
+    font-weight: 900;
 }
