@@ -10,6 +10,7 @@
     position: relative;
     border-radius: .5em;
     box-shadow: 0 6px 8px -5px #000;
+    color: black;
 }
 .floppy:before {
     content: "";
