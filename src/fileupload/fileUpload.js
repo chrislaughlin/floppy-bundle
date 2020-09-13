@@ -1,6 +1,8 @@
 import React, {useCallback, useState, useEffect} from 'react';
 import Dropzone from 'react-dropzone'
 
+import FloppyDrive from '../floppy-drive.png';
+
 const FileUpload = ({ onFileProcessed }) => {
     const [file, setFile] = useState(null);
     const [fileContents, setFileContents] = useState(null);
@@ -35,7 +37,7 @@ const FileUpload = ({ onFileProcessed }) => {
     return (
         <div className="file-upload">
             <span>
-                Upload a
+                Click the <b>Floppy Drive below</b> to Upload a &nbsp;
                 <a
                     href="https://webpack.js.org/api/stats/#asset-objects"
                     target="_blank"
@@ -51,10 +53,13 @@ const FileUpload = ({ onFileProcessed }) => {
                 {({getRootProps, getInputProps}) => (
                     <div {...getRootProps()}>
                         <input {...getInputProps()} />
-
-                        <button>
-                            Upload File
-                        </button>
+                        <div className="upload-button">
+                            <img
+                                className="floppy-drive"
+                                src={FloppyDrive}
+                                alt="Floppy Drive Icon"
+                            />
+                        </div>
                     </div>
                 )}
             </Dropzone>

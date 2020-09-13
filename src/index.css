@@ -64,21 +64,20 @@ h2 {
 }
 
 .file-upload span {
-    font-size: 1.5em;
+    font-size: 4em;
 }
 
 a {
     color: #a9efff;
 }
 
-button {
+.upload-button {
+    margin-top: 20px;
     width: 20em;
     height: 5em;
-    border-radius: 15px;
-    border: none;
-    background: #2A879D;
-    color: #F1E8C4;
-    font-size: 1em;
-    margin-top: 20px;
-    font-weight: 900;
+}
+
+.floppy-drive {
+    width: 20em;
+    height: 8em;
 }
