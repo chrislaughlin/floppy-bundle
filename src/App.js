@@ -1,9 +1,11 @@
-import React from 'react';
+import React, {useState} from 'react';
 import FloppyIcon from "./floppyIcon/floppyIcon";
 import FileUpload from "./fileupload/fileUpload";
 import {ErrorBoundary} from "react-error-boundary";
 
 const App = () => {
+    const [assets, setAssets] = useState(null);
+
     return (
         <div className="app">
             <h1>
@@ -12,9 +14,13 @@ const App = () => {
             <h2>
                 How many floppy disks would it take to hold your JavaScript bundle
             </h2>
-            <FloppyIcon/>
+            <FloppyIcon
+                assets={assets}
+            />
             <ErrorBoundary fallback={<div>Oh no</div>}>
-                <FileUpload/>
+                <FileUpload
+                    onFileProcessed={setAssets}
+                />
             </ErrorBoundary>
 
         </div>

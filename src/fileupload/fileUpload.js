@@ -1,7 +1,7 @@
 import React, {useCallback, useState, useEffect} from 'react';
 import Dropzone from 'react-dropzone'
 
-const FileUpload = () => {
+const FileUpload = ({ onFileProcessed }) => {
     const [file, setFile] = useState(null);
     const [fileContents, setFileContents] = useState(null);
 
@@ -19,7 +19,9 @@ const FileUpload = () => {
             reader.onload = function (evt) {
                 const rawData = JSON.parse(evt.target.result);
                 if (rawData.assets) {
-                    setFileContents(rawData.assets.filter(asset => asset.name.endsWith('.js')))
+                    const jsAssets = rawData.assets.filter(asset => asset.name.endsWith('.js'));
+                    setFileContents(jsAssets)
+                    onFileProcessed(jsAssets)
                 } else {
                     console.log('No Assets data')
                 }
@@ -29,7 +31,6 @@ const FileUpload = () => {
             }
         }
     }, [file])
-
 
     return (
         <div className="file-upload">
