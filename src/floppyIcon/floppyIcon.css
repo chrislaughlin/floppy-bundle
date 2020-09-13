@@ -1,0 +1,178 @@
+@import url(https://fonts.googleapis.com/css?family=Marcellus);
+.floppy {
+    width: 30em;
+    height: 30em;
+    background: radial-gradient(rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0.2)), -webkit-gradient(linear, left top, left bottom, from(#3c3c3c), to(#222));
+    background: radial-gradient(rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0.2)), linear-gradient(#3c3c3c, #222);
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2em;
+    position: relative;
+    border-radius: .5em;
+    box-shadow: 0 6px 8px -5px #000;
+}
+.floppy:before {
+    content: "";
+    width: 2em;
+    height: 2em;
+    position: absolute;
+    display: block;
+    right: 0;
+}
+
+.shutter-container {
+    background: -webkit-gradient(linear, left top, left bottom, from(#111), to(#232323));
+    background: linear-gradient(#111, #232323);
+    width: 19.5em;
+    height: 9.9em;
+    position: absolute;
+    left: 3.9em;
+    border-radius: 0 0 .3em .3em;
+    overflow: hidden;
+    box-shadow: 0 3px #fff inset, 0 -1px 2px #000 inset, 0 1px rgba(255, 255, 255, 0.2);
+}
+
+.shutter {
+    background: radial-gradient(#fff, #aeaeae);
+    width: 15em;
+    height: 9.75em;
+    border-bottom-right-radius: 0.3em;
+    position: absolute;
+    display: -webkit-box;
+    display: flex;
+    right: 2px;
+    overflow: hidden;
+}
+.shutter::before {
+    content: "";
+    width: 3.75em;
+    height: 7.8em;
+    background: -webkit-gradient(linear, left top, left bottom, from(#111), to(#232323));
+    background: linear-gradient(#111, #232323);
+    margin: auto auto auto 9em;
+    box-shadow: 4px 0 8px #000 inset, -1px 0 rgba(255, 255, 255, 0.3) inset;
+    z-index: 200;
+}
+.shutter::after {
+    position: absolute;
+    content: "";
+    display: block;
+    width: 90%;
+    height: 1px;
+    background: #bbb;
+    z-index: 100;
+    top: 7px;
+    left: 0;
+    color: #d5d5d5;
+    box-shadow: 0px 0px, 0px 10px, 0px 20px, 0px 30px, 0px 40px, 0px 50px, 0px 60px, 0px 70px, 0px 80px, 0px 90px, 0px 100px, 0px 110px, 0px 120px, 0px 130px, 0px 140px, 0px 150px, 0px 160px, 0px 170px, 0px 180px, 0px 190px, 0px 200px, 0px 210px, 0px 220px, 0px 230px, 0px 240px, 0px 250px, 0px 260px, 0px 270px, 0px 280px, 0px 290px, 0px 300px, 0px 310px, 0px 320px, 0px 330px, 0px 340px, 0px 350px, 0px 360px, 0px 370px, 0px 380px, 0px 390px, 0px 400px, 20px 5px, 20px 15px, 20px 25px, 20px 35px, 20px 45px, 20px 55px, 20px 65px, 20px 75px, 20px 85px, 20px 95px, 20px 105px, 20px 115px, 20px 125px, 20px 135px, 20px 145px, 20px 155px, 20px 165px, 20px 175px, 20px 185px, 20px 195px, 20px 205px, 20px 215px, 20px 225px, 20px 235px, 20px 245px, 20px 255px, 20px 265px, 20px 275px, 20px 285px, 20px 295px, 20px 305px, 20px 315px, 20px 325px, 20px 335px, 20px 345px, 20px 355px, 20px 365px, 20px 375px, 20px 385px, 20px 395px, 20px 405px;
+    opacity: .2;
+    -webkit-transform: rotate(-10deg) translate(50px, -25px);
+    transform: rotate(-10deg) translate(50px, -25px);
+}
+
+.title {
+    position: absolute;
+    text-transform: uppercase;
+    font-family: Marcellus, sans-serif;
+    font-size: .95em;
+    top: 1em;
+    left: .5em;
+    border-bottom: 1px solid rgba(17, 17, 17, 0.3);
+}
+
+.subtitle {
+    position: absolute;
+    top: 3.2em;
+    left: .6em;
+    font-family: Marcellus, sans-serif;
+    font-size: .75em;
+}
+
+.label-container {
+    left: 3.9em;
+    background: #111;
+    position: absolute;
+    width: 22.2em;
+    height: 16.5em;
+    bottom: 0;
+    border-radius: 0.444em 0.444em 0 0;
+    box-shadow: 0 2px 2px #000 inset, 0 -1px rgba(255, 255, 255, 0.15);
+}
+
+.label {
+    width: 96%;
+    height: 98%;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(97%, #fff), color-stop(3%, rgba(220, 65, 48, 0.6))) 0 0/50px repeat, #fff;
+    background: linear-gradient(#fff 97%, rgba(220, 65, 48, 0.6) 3%) 0 0/50px repeat, #fff;
+    position: absolute;
+    bottom: 0;
+    left: 2%;
+    border-radius: 5px 5px 0 0;
+    overflow: hidden;
+}
+.label::before {
+    position: absolute;
+    width: 100%;
+    height: 37px;
+    background: #DC4130;
+    content: "";
+    top: 0;
+}
+.label span {
+    position: absolute;
+    top: 50%;
+    left: 30%;
+}
+
+.protect {
+    width: 1.5em;
+    height: 1.2em;
+    position: absolute;
+    bottom: 1em;
+    border-radius: 1px;
+}
+.protect-1 {
+    left: 1em;
+    background: #111;
+    box-shadow: 0 1px rgba(255, 255, 255, 0.15) inset, 0 0 1px 2px rgba(0, 0, 0, 0.4) inset;
+}
+.protect-2 {
+    right: 1em;
+    background: #fff;
+    box-shadow: 0 1px 1px #000 inset;
+    border: 1px solid #000;
+}
+
+.arrow {
+    position: absolute;
+    left: 1.4em;
+    top: 1em;
+}
+.arrow-rect {
+    width: 1em;
+    height: 1.5em;
+    position: absolute;
+    background: #222;
+    top: 1.5em;
+    box-shadow: 0 -1px 1px #000 inset, 0 1px rgba(255, 255, 255, 0.1);
+}
+.arrow-triangle {
+    width: 1.5em;
+    height: 1.5em;
+    position: absolute;
+    top: 0;
+    left: -0.25em;
+    overflow: hidden;
+}
+.arrow-triangle::before {
+    content: "";
+    position: absolute;
+    width: 85%;
+    height: 85%;
+    background: #222;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    left: 2px;
+    top: 16px;
+    box-shadow: 0 0 1px 1px #000;
+}
