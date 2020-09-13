@@ -1,5 +1,7 @@
 import React from 'react';
 import FloppyIcon from "./floppyIcon/floppyIcon";
+import FileUpload from "./fileupload/fileUpload";
+import {ErrorBoundary} from "react-error-boundary";
 
 const App = () => {
     return (
@@ -11,6 +13,10 @@ const App = () => {
                 How many floppy disks would it take to hold your JavaScript bundle
             </h2>
             <FloppyIcon/>
+            <ErrorBoundary fallback={<div>Oh no</div>}>
+                <FileUpload/>
+            </ErrorBoundary>
+
         </div>
     );
 }
