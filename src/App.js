@@ -1,10 +1,30 @@
-import React, {useState} from 'react';
+import React, { useState, useEffect } from 'react';
 import FloppyIcon from "./floppyIcon/floppyIcon";
 import FileUpload from "./fileupload/fileUpload";
 import {ErrorBoundary} from "react-error-boundary";
+import useFetch from '@chrislaughlin/usefetch'
 
 const App = () => {
     const [assets, setAssets] = useState(null);
+
+
+    const {
+        isLoading,
+        error,
+        data
+    } = useFetch(
+        '/.netlify/functions/hello',
+        {
+                method: 'GET',
+                headers: {"Content-Type": "application/json"}
+            }
+        );
+
+    console.log({
+        isLoading,
+        error,
+        data
+    });
 
     return (
         <div className="app">
