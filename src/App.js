@@ -2,29 +2,10 @@ import React, { useState, useEffect } from 'react';
 import FloppyIcon from "./floppyIcon/floppyIcon";
 import FileUpload from "./fileupload/fileUpload";
 import {ErrorBoundary} from "react-error-boundary";
-import useFetch from '@chrislaughlin/usefetch'
 
 const App = () => {
     const [assets, setAssets] = useState(null);
-
-
-    const {
-        isLoading,
-        error,
-        data
-    } = useFetch(
-        '/.netlify/functions/hello',
-        {
-                method: 'GET',
-                headers: {"Content-Type": "application/json"}
-            }
-        );
-
-    console.log({
-        isLoading,
-        error,
-        data
-    });
+    const [url, setUrl] = useState('');
 
     return (
         <div className="app">
@@ -42,6 +23,25 @@ const App = () => {
                     onFileProcessed={setAssets}
                 />
             </ErrorBoundary>
+            <div className="url-entry">
+                <input value={url} onChange={evt => setUrl(evt.target.value)} />
+                <button
+                    onClick={() => {
+                        fetch(
+                            '/.netlify/functions/hello',
+                            {
+                                method: 'POST',
+                                headers: {"Content-Type": "application/json"},
+                                body: JSON.stringify({ url })
+                            }
+
+                        ).then(res => res.json())
+                        .then(data => setAssets(data))
+                    }}
+                >
+                    GO
+                </button>
+            </div>
 
         </div>
     );
