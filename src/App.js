@@ -24,23 +24,29 @@ const App = () => {
                 />
             </ErrorBoundary>
             <div className="url-entry">
-                <input value={url} onChange={evt => setUrl(evt.target.value)} />
-                <button
-                    onClick={() => {
-                        fetch(
-                            '/.netlify/functions/hello',
-                            {
-                                method: 'POST',
-                                headers: {"Content-Type": "application/json"},
-                                body: JSON.stringify({ url })
-                            }
+                <h2>
+                    Or enter the URL to your site below
+                </h2>
+                <div>
+                    <input value={url} onChange={evt => setUrl(evt.target.value)} />
+                    <button
+                        onClick={() => {
+                            fetch(
+                                '/.netlify/functions/hello',
+                                {
+                                    method: 'POST',
+                                    headers: {"Content-Type": "application/json"},
+                                    body: JSON.stringify({ url })
+                                }
 
-                        ).then(res => res.json())
-                        .then(data => setAssets(data))
-                    }}
-                >
-                    GO
-                </button>
+                            ).then(res => res.json())
+                                .then(data => setAssets(data))
+                        }}
+                    >
+                        GO
+                    </button>
+                </div>
+
             </div>
 
         </div>
