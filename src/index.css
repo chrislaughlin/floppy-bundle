@@ -97,22 +97,32 @@ a {
 
 .url-entry > div {
     display: flex;
+    margin-bottom: 100px;
+    margin-top: 20px;
 }
 
 .url-entry input {
-    width: 300px;
-    height: 20px;
-    background: #f0e8c4;
-    border: 1px black dashed;
-    color: #dc412f;
-    font-size: 4em;
-    padding: 0.5em;
+    height: 40px;
+    font-size: 32px;
+    border: none;
+    padding: 5px 10px;
+    border-bottom: 5px solid rgb(46, 214, 150);
+    color: rgb(58, 58, 58);
 }
 
 .url-entry button {
-    background: #f0e8c4;
-    border: 1px black dashed;
-    color: #dc412f;
-    font-size: 3.1em;
-    padding: 0.5em;
+    margin-left: 10px;
+    padding: 0 30px;
+    border:none;
+    font-size: 32px;
+    background-color: white;
+    color:  rgb(46, 214, 150);
+    transition: all 0.5s;
+    font-weight: bold;
+}
+
+.url-entry button:hover{
+    background-color: rgba(255, 255, 255, 0.897);
+    color:  rgb(29, 161, 111);
+    cursor: pointer;
 }
